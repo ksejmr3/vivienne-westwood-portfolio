@@ -1,0 +1,146 @@
+.hero-section {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin-left: 1px;
+  overflow: hidden;
+  background: var(--color-primary-white);
+  color: #000;
+}
+
+.hero-section__caption {
+  position: absolute;
+  top: 931px;
+  z-index: 0;
+  margin: 0;
+  font: var(--type-text-caption);
+  letter-spacing: var(--tracking-text-caption);
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.hero-section__caption--left {
+  left: 45px;
+  width: 156px;
+}
+
+.hero-section__caption--right {
+  right: 45px;
+  width: 230px;
+  text-align: right;
+}
+
+.hero-section__title {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  color: #000000;
+  opacity: 1;
+  font: var(--type-display-hero);
+  letter-spacing: var(--tracking-display-hero);
+  line-height: 0.88;
+  white-space: nowrap;
+}
+
+.hero-section__title--top {
+  top: 30px;
+  left: 270px;
+  width: 1380px;
+}
+
+.hero-section__title--bottom {
+  top: 813px;
+  left: 310px;
+  width: 1300px;
+}
+
+.hero__card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__card-face {
+  flex: none;
+}
+
+.hero__card--back-03 {
+  top: 164.23px;
+  left: 669px;
+  width: 535.8px;
+  height: 693.781px;
+}
+
+.hero__card--back-03 .hero__card-face {
+  width: 516.889px;
+  height: 679.509px;
+  transform: rotate(1.61deg);
+  background: var(--color-editorial-leather-black);
+}
+
+.hero__card--back-02 {
+  top: 141.27px;
+  left: 674.46px;
+  width: 544.783px;
+  height: 710.061px;
+}
+
+.hero__card--back-02 .hero__card-face {
+  width: 501.12px;
+  height: 678.484px;
+  transform: rotate(-3.78deg);
+  background: var(--color-material-tartan-red);
+}
+
+.hero__card--back-01 {
+  top: 174px;
+  left: 718.48px;
+  width: 539.785px;
+  height: 660.296px;
+}
+
+.hero__card--back-01 .hero__card-face {
+  width: 517.185px;
+  height: 642.24px;
+  transform: rotate(2.05deg);
+  border: 1px solid var(--color-primary-black);
+  background: var(--color-material-pearl-ivory);
+}
+
+.hero-section__front-card {
+  position: absolute;
+  top: 142.58px;
+  left: 661.26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 597.3px;
+  height: 793.514px;
+}
+
+.hero-section__poster-content {
+  position: relative;
+  flex: none;
+  width: 516.889px;
+  height: 739.762px;
+  transform: rotate(-6.5deg);
+}
+
+.hero-section__poster {
+  position: absolute;
+  inset: 0;
+  width: 516.889px;
+  height: 739.762px;
+  max-width: none;
+  object-fit: cover;
+}
+
+.hero-section__play-icon {
+  position: absolute;
+  top: 362.38px;
+  left: 250.94px;
+  width: 50px;
+  height: 50px;
+  max-width: none;
+}
