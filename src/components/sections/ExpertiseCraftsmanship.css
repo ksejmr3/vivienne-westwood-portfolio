@@ -1,0 +1,102 @@
+.expertise-craftsmanship {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin-left: 1px;
+  overflow: hidden;
+  background: var(--color-material-antique-ivory);
+  color: var(--color-primary-black);
+}
+
+.expertise-craftsmanship__image-bounds {
+  position: absolute;
+  top: calc(50% - 17.57px);
+  left: 1172px;
+  display: flex;
+  width: 607.045px;
+  height: 790.16px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.expertise-craftsmanship__image-rotation {
+  flex: none;
+  transform: rotate(-2.04deg);
+}
+
+.expertise-craftsmanship__image {
+  display: block;
+  width: 580px;
+  height: 770px;
+  max-width: none;
+  object-fit: cover;
+}
+
+.expertise-craftsmanship__counter {
+  position: absolute;
+  top: 110px;
+  left: 110px;
+  display: flex;
+  width: 55px;
+  height: 55px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary-black);
+  border-radius: 50%;
+  color: var(--color-primary-black);
+  font: var(--type-text-caption);
+  letter-spacing: var(--tracking-text-caption);
+}
+
+.expertise-craftsmanship__description {
+  position: absolute;
+  top: 215px;
+  left: 138px;
+  display: flex;
+  width: 683px;
+  height: 190px;
+  flex-direction: column;
+  color: var(--color-primary-black);
+  font: 200 28px/1.35 var(--font-body);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.expertise-craftsmanship__title {
+  position: absolute;
+  top: 541px;
+  left: 135px;
+  width: 572px;
+  height: 320px;
+  color: var(--color-primary-black);
+  font: var(--type-display-expertise);
+  letter-spacing: var(--tracking-display-expertise);
+  line-height: 0.8;
+}
+
+.expertise-craftsmanship__title span {
+  display: block;
+}
+
+.expertise-craftsmanship__cta-label {
+  position: absolute;
+  top: 912px;
+  left: 135px;
+  width: 189px;
+  height: 19px;
+  color: var(--color-primary-black);
+  font: var(--type-button-primary);
+  letter-spacing: var(--tracking-button-primary);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.expertise-craftsmanship__divider {
+  position: absolute;
+  top: 891px;
+  left: 136px;
+  width: 560px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+}

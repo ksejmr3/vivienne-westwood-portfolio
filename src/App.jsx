@@ -4,6 +4,8 @@ import LatestCollection from './components/sections/LatestCollection.jsx'
 import HouseObjects from './components/sections/HouseObjects.jsx'
 import SelectedProjects from './components/sections/SelectedProjects.jsx'
 import HouseIntro from './components/sections/HouseIntro.jsx'
+import ExpertiseHeritage from './components/sections/ExpertiseHeritage.jsx'
+import ExpertiseCraftsmanship from './components/sections/ExpertiseCraftsmanship.jsx'
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <HouseObjects />
       <SelectedProjects />
       <HouseIntro />
+      <ExpertiseHeritage />
+      <ExpertiseCraftsmanship />
     </main>
   )
 }
