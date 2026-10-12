@@ -1,0 +1,101 @@
+.house-objects {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin-left: 1px;
+  overflow: hidden;
+  background: var(--color-primary-white);
+  color: #000;
+}
+
+.house-objects__title {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  color: #000;
+  font: var(--type-display-m);
+  letter-spacing: var(--tracking-display-m);
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.house-objects__arrows {
+  position: absolute;
+  top: 217px;
+  left: 1740px;
+  display: flex;
+  align-items: center;
+  gap: 38.002px;
+  height: 21.213px;
+}
+
+.house-objects__arrow {
+  position: relative;
+  display: block;
+  width: 21.213px;
+  height: 21.213px;
+  flex: 0 0 21.213px;
+  overflow: visible;
+}
+
+.house-objects__arrow img {
+  position: absolute;
+  top: -0.354px;
+  left: -4.245px;
+  width: 25.457px;
+  height: 28.991px;
+  max-width: none;
+}
+
+.house-objects__arrow--next img {
+  transform: rotate(180deg);
+}
+
+.house-objects__carousel {
+  position: absolute;
+  top: 312px;
+  left: 100px;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  width: 2600px;
+  height: 530px;
+}
+
+.house-objects__card {
+  position: relative;
+  flex: 0 0 400px;
+  width: 400px;
+  height: 530px;
+}
+
+.house-objects__image-frame {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  background: var(--color-material-pearl-ivory);
+}
+
+.house-objects__image {
+  position: absolute;
+  top: 0;
+  left: -11px;
+  width: 422px;
+  height: 488px;
+  max-width: none;
+  object-fit: cover;
+}
+
+.house-objects__product-name {
+  position: absolute;
+  top: 510px;
+  left: 0;
+  width: 100%;
+  color: #000;
+  font: var(--type-text-caption);
+  letter-spacing: 0.5px;
+  line-height: 1.45;
+  text-align: center;
+  white-space: nowrap;
+}

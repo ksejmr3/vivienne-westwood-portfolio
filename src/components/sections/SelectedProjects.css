@@ -1,0 +1,119 @@
+.selected-projects {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin-left: 1px;
+  overflow: hidden;
+  background: var(--color-primary-black);
+  color: var(--color-primary-white);
+}
+
+.selected-projects__title {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  color: var(--color-primary-white);
+  font: var(--type-display-m);
+  letter-spacing: var(--tracking-display-m);
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.selected-projects__project-stack {
+  position: absolute;
+  inset: 0;
+}
+
+.selected-projects__card-frame {
+  position: absolute;
+  top: var(--card-top);
+  left: var(--card-left);
+  display: flex;
+  width: var(--card-frame-width);
+  height: var(--card-frame-height);
+  align-items: center;
+  justify-content: center;
+  z-index: var(--card-layer);
+}
+
+.selected-projects__card {
+  position: relative;
+  flex: none;
+  width: 370px;
+  height: 575px;
+  overflow: hidden;
+  transform: rotate(var(--card-angle));
+}
+
+.selected-projects__image,
+.selected-projects__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.selected-projects__image {
+  max-width: none;
+  object-fit: cover;
+}
+
+.selected-projects__image--atelier {
+  top: -5.61%;
+  height: 111.23%;
+}
+
+.selected-projects__image--couture {
+  top: -1.11%;
+  left: -0.43%;
+  width: 100.83%;
+  height: 112.15%;
+}
+
+.selected-projects__image--runway {
+  top: -5.61%;
+  height: 111.23%;
+}
+
+.selected-projects__overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.selected-projects__all-projects {
+  position: absolute;
+  top: 100px;
+  left: 1581px;
+  display: flex;
+  width: 239px;
+  height: 52px;
+  align-items: center;
+  border: 1px solid rgba(248, 248, 248, 0.5);
+  color: var(--color-primary-white);
+  text-decoration: none;
+  z-index: 10;
+}
+
+.selected-projects__all-projects span {
+  position: absolute;
+  top: 15px;
+  left: 3px;
+  display: block;
+  width: 196px;
+  height: 19px;
+  color: var(--color-primary-white);
+  font: var(--type-button-primary);
+  letter-spacing: var(--tracking-button-primary);
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.selected-projects__all-projects img {
+  position: absolute;
+  top: 16px;
+  left: 218px;
+  width: 19px;
+  height: 19px;
+  max-width: none;
+  transform: rotate(180deg);
+}

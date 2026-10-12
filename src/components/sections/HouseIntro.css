@@ -1,0 +1,19 @@
+.house-intro {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--color-material-pearl-ivory);
+  color: #000;
+}
+
+.house-intro__title {
+  position: absolute;
+  top: 484px;
+  left: 398px;
+  color: #000;
+  font: var(--type-display-xl);
+  letter-spacing: var(--tracking-display-xl);
+  line-height: 0.94;
+  white-space: nowrap;
+}

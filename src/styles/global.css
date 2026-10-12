@@ -104,15 +104,17 @@ a {
 
 #root {
   display: block;
-  width: 1921px;
+  width: 100%;
   max-width: none;
   min-height: 100vh;
   margin: 0;
   border: 0;
   text-align: left;
+  container-type: inline-size;
 }
 
 .portfolio {
   width: 1921px;
   min-height: 1171px;
+  zoom: min(1, calc(100cqw / 1921px));
 }
