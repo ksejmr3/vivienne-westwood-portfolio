@@ -70,21 +70,21 @@ Vivienne Westwood 패션 하우스의 반항적 태도와 영국식 헤리티지
 
 | 순서 | 섹션 / 역할 | Figma 노드 | 프레임 위치와 크기 | 현재 코드 상태 |
 |---:|---|---|---|---|
-| 1 | Header — 브랜드/주요 메뉴 | `234:554` | y=0, 1920×91 | 구현됨, 링크 동작은 정적 |
-| 2 | Hero — 브랜드 선언과 캠페인 이미지 | `234:543` | y=91, 1920×1080 | 정적 구현됨, 영상 재생 없음 |
-| 3 | Latest Collection — 시즌 컬렉션 소개 | `234:520` | y=1171, 1920×1080 | 정적 구현됨, 이미지 전환 없음 |
-| 4 | House Objects — 제품 목록 | `234:530` | y=2251, 1920×1080 | 정적 구현됨, 캐러셀 동작 없음 |
-| 5 | Selected Projects — 프로젝트 포트폴리오 | `234:509` | y=3331, 1920×1080 | 기본 상태 정적 구현, 카드 상세 전환 없음 |
-| 6 | House Intro — 하우스 정의 제목 | `234:507` | y=4411, 1920×1080 | 제목 정적 구현 |
-| 7 | Expertise / Heritage — 헤리티지 | `234:500` | y=5491, 1920×1080 | 미구현 |
-| 8 | Expertise / Craftsmanship — 장인정신 | `234:493` | y=6571, 1920×1080 | 미구현 |
-| 9 | Expertise / Rebellion — 반항성 | `234:486` | y=7651, 1920×1080 | 미구현 |
-| 10 | Latest News — 최신 소식 | `234:447` | y=8731, 1920×1080 | 미구현 |
-| 11 | House Codes — 브랜드 코드 | `234:464` | y=9811, 1920×1080 | 미구현 |
-| 12 | Editorial Voices — 에디토리얼/인용 | `234:437` | y=10891, 1920×1080 | 미구현 |
-| 13 | Footer — 마무리/보조 탐색 | `234:420` | y=11971, 1920×1080 | 미구현 |
+| 1 | Header — 브랜드/주요 메뉴 | `234:554` | y=0, 1920×91 | 정적 구현 완료, 링크 동작 미구현 |
+| 2 | Hero — 브랜드 선언과 캠페인 이미지 | `234:543` | y=91, 1920×1080 | 정적 구현 완료, 영상 재생 미구현 |
+| 3 | Latest Collection — 시즌 컬렉션 소개 | `234:520` | y=1171, 1920×1080 | 정적 구현 완료, 이미지 전환 미구현 |
+| 4 | House Objects — 제품 목록 | `234:530` | y=2251, 1920×1080 | 정적 구현 완료, 캐러셀 동작 미구현 |
+| 5 | Selected Projects — 프로젝트 포트폴리오 | `234:509` | y=3331, 1920×1080 | 기본 상태 정적 구현 완료, 카드 상세 전환 미구현 |
+| 6 | House Intro — 하우스 정의 제목 | `234:507` | y=4411, 1920×1080 | 정적 구현 완료 |
+| 7 | Expertise / Heritage — 헤리티지 | `234:500` | y=5491, 1920×1080 | 정적 구현 완료 |
+| 8 | Expertise / Craftsmanship — 장인정신 | `234:493` | y=6571, 1920×1080 | 정적 구현 완료 |
+| 9 | Expertise / Rebellion — 반항성 | `234:486` | y=7651, 1920×1080 | 정적 구현 완료 |
+| 10 | Latest News — 최신 소식 | `234:447` | y=8731, 1920×1080 | 정적 구현 완료 |
+| 11 | House Codes — 브랜드 코드 | `234:464` | y=9811, 1920×1080 | 정적 구현 완료 |
+| 12 | Editorial Voices — 에디토리얼/인용 | `234:437` | y=10891, 1920×1080 | 정적 구현 완료 |
+| 13 | Footer — 마무리/보조 탐색 | `234:420` | y=11971, 1920×1080 | 정적 구현 완료 |
 
-섹션 위치는 Figma 부모 프레임에서 확인한 좌표이며 브라우저의 실제 전체 높이나 이미지 픽셀 점유율을 측정한 값은 아니다.
+13개 프레임의 정적 구현과 1920px 데스크톱 기준 정밀 시각 검수를 완료했다. Selected Projects의 `VIEW ALL PROJECTS` 화살표 위치도 Figma 비교 후 수정했다. 섹션 위치는 Figma 부모 프레임에서 확인한 좌표이며 브라우저의 실제 전체 높이나 이미지 픽셀 점유율을 뜻하지 않는다.
 
 ## 5. Components
 
@@ -92,7 +92,7 @@ Vivienne Westwood 패션 하우스의 반항적 태도와 영국식 헤리티지
 - **Button:** Figma Primary Button 스타일은 Lora Italic 500, 16px/1.2. 실제 사용 노드의 테두리, 화살표, Fill을 별도로 확인한다. 단순 표시 텍스트는 접근 가능한 실제 `button`/`a`로 바꾸는 것은 인터랙션 단계에서 처리한다.
 - **Card:** 섹션에 따라 이미지 프레임, 크롭, 회전, 오버레이가 다르다. House Objects 및 Selected Projects는 개별 데이터/요소로 나눈다. 공통 카드 CSS를 무리하게 공유해 크롭/회전 차이를 없애지 않는다.
 - **Navigation:** 기본 헤더 항목은 Work/Collection 등 각 Figma 화면의 라벨을 사용한다. 활성 상태, 이동 목적지, sticky/fixed 동작은 실제 prototype/노드 확인 전까지 미확인이다.
-- **Footer:** Figma에는 프레임 `234:420`이 있으나 현재 React 앱에 연결되지 않았다. 콘텐츠/링크 구현 시 노드를 다시 읽는다.
+- **Footer:** 프레임 `234:420`을 정적 레이아웃으로 구현하고 React 앱에 연결했다. 실제 링크 동작은 인터랙션 단계에서 확인한다.
 
 ### 현재 컴포넌트 트리
 
@@ -103,8 +103,17 @@ App
 ├── LatestCollection
 ├── HouseObjects
 ├── SelectedProjects
-└── HouseIntro
+├── HouseIntro
+├── ExpertiseHeritage
+├── ExpertiseCraftsmanship
+├── ExpertiseRebellion
+├── LatestNews
+├── HouseCodes
+├── EditorialVoices
+└── Footer
 ```
+
+총 13개 프레임 중 Header 1개와 콘텐츠 섹션 12개가 `App`에 순서대로 연결되어 있다.
 
 각 구현 섹션은 `src/components/sections/<Section>.jsx`와 대응 `.css`, Header는 `src/components/layout/`에 있다. 공통 글로벌 CSS와 토큰은 `src/styles/`에 둔다.
 
@@ -120,7 +129,7 @@ App
 
 ### 현재 확인 상태
 
-Header, Hero, Latest Collection, House Objects, Selected Projects, House Intro는 정적 레이아웃이다. 메뉴, 아이콘, 상태 점, 화살표는 일부 정적 표현만 있고 동작이 연결되지 않았다. Hero 영상은 제공된 포스터만 표시한다. Selected Projects Figma 클릭 상태(`259:1911`)는 참고 노드이며 현재 기본 화면에 인터랙션은 구현하지 않았다.
+Header부터 Footer까지 13개 프레임의 기본 상태는 정적 레이아웃으로 구현되어 있고, 1920px 기준 정밀 시각 검수를 마쳤다. Selected Projects의 `VIEW ALL PROJECTS` 화살표 위치 수정도 반영했다. 메뉴, 아이콘, 상태 점, 화살표는 정적 표현이며 동작은 아직 연결되지 않았다. Hero 영상은 제공된 포스터만 표시한다. Selected Projects Figma 클릭 상태(`259:1911`)는 참고 상태로만 확인했으며 실제 인터랙션은 미구현이다.
 
 ### 구현 순서 제안 — Figma prototype 추가 검증 필요
 
@@ -134,9 +143,9 @@ Paper Tiger 페이지에서 Work/Expertise/Agency/News/Contact 내비게이션, 
 
 ## 8. Responsive Design
 
-- **Desktop — 확인:** Figma 섹션은 1920 × 1080px 기준. 현재 `global.css`가 1921px 캔버스를 컨테이너 너비에 따라 비례 축소한다.
-- **Tablet — 미정:** 별도 Figma 프레임, breakpoint, 재배치 규칙을 확인하지 못했다.
-- **Mobile — 미정:** 별도 Figma 프레임, 모바일 네비게이션, 카드 재배치 규칙을 확인하지 못했다. 임의의 시안을 만들지 않는다.
+- **Desktop — 확인 및 구현:** Figma 섹션은 1920 × 1080px 기준. 현재 `global.css`의 1921px 캔버스 비례 축소 구조를 유지하며, 1920px 기준 13개 프레임 정밀 검수를 완료했다.
+- **Tablet — 향후 별도 검수:** 별도 Figma 프레임, breakpoint, 재배치 규칙은 확인되지 않았다.
+- **Mobile — 향후 별도 검수 및 구현:** 별도 Figma 프레임, 모바일 네비게이션, 카드 재배치 규칙은 확인되지 않았다. 사용자/디자인 사양 확인 후 진행하며 임의 시안을 만들지 않는다.
 - 새 반응형 동작은 디자인 소스/요청을 확인한 후 정의하고, 그 전까지 전역 zoom 및 데스크톱 캔버스는 변경하지 않는다.
 
 ## 9. Accessibility
@@ -186,13 +195,14 @@ Vivienne Westwood의 런던 기반 패션 하우스, 타탄/펄/가죽의 소재
 
 ## 실제 코드와 Figma의 현재 차이 / 미확인 사항
 
-- **페이지 구현 범위:** Figma에는 13개 섹션이 있으나 현재 `App.jsx`는 Header부터 House Intro까지 6개만 렌더링한다. 나머지 Expertise 3개, Latest News, House Codes, Editorial Voices, Footer는 미구현이다.
-- **상호작용:** 현재 섹션의 기본 화면은 정적 구현이다. 메뉴 이동, Hero 재생, Collection 전환, House Objects 캐러셀, Selected Projects 상세 클릭 상태는 미구현이다.
+- **페이지 구현 범위:** Header부터 Footer까지 Figma 13개 프레임의 기본 정적 레이아웃을 구현하고 `App.jsx`에 연결했다. 1920px 기준 정밀 시각 검수를 완료했다.
+- **Selected Projects 보정:** `VIEW ALL PROJECTS` 화살표 위치를 Figma 비교 결과에 맞춰 수정했다.
+- **상호작용:** 전체 페이지는 정적 상태다. 메뉴 이동, Hero 재생, Collection 전환, House Objects 캐러셀, Selected Projects 상세 클릭 상태, 뉴스/에디토리얼 제어, Footer 링크 동작은 미구현이다.
 - **토큰:** Figma의 8개 주요 색 변수는 현재 `variables.css` 토큰과 값이 대응한다. Figma 일부 레이어의 순수 `#FFFFFF`, `#000000` 및 opacity가 있는 paint는 동일한 별도 토큰으로 정의되지 않고 일부 섹션 CSS에서 직접 색/알파를 쓴다.
 - **페이지 상태/모바일:** tablet/mobile용 Figma 프레임과 정확한 breakpoint/재배치 규칙은 확인되지 않았다.
 - **레퍼런스 동작:** Paper Tiger와 Max & Tiber의 구조/텍스트/목록은 확인했지만 구체적인 hover, scroll-trigger, easing, duration, 캐러셀 제스처 등은 확인되지 않았다.
 - **비율/전역 색 면적:** Figma가 색 사용 비율을 명시하지 않았고 픽셀 기반 면적 분석도 하지 않았다.
-- **현재 화면 전수 일치 여부:** 이 문서는 모든 현재 컴포넌트에 대해 새 브라우저 캡처 기반 픽셀 검수를 수행한 결과가 아니다. 수치/코드 비교 외에 시각 검증이 필요한 차이는 해당 섹션 작업의 검수 기록에서 확인한다.
+- **반응형:** 현재 전역 zoom은 기존 데스크톱 캔버스 동작을 유지한다. Tablet/Mobile 레이아웃은 별도 검수 및 구현 예정이다.
 
 ## Reference observations
 

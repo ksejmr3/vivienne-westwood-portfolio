@@ -1,0 +1,184 @@
+.house-codes {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin-left: 1px;
+  overflow: hidden;
+  background: var(--color-material-pearl-ivory);
+  color: #000;
+  white-space: nowrap;
+}
+
+.house-codes__word {
+  position: absolute;
+  color: #000;
+  font: var(--type-display-codes);
+  letter-spacing: var(--tracking-display-codes);
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.house-codes__word--vivienne-red {
+  color: var(--color-accent-vivienne-red);
+}
+
+.house-codes__word--tartan-red {
+  color: var(--color-material-tartan-red);
+}
+
+.house-codes__word--orb {
+  top: 19px;
+  left: 199px;
+  width: 286px;
+  height: 189px;
+}
+
+.house-codes__word--corset {
+  top: 19px;
+  left: 655px;
+  width: 555px;
+  height: 189px;
+}
+
+.house-codes__word--tartan {
+  top: 19px;
+  left: 1380px;
+  width: 545px;
+  height: 189px;
+}
+
+.house-codes__word--punk {
+  top: 232px;
+  left: -19px;
+  width: 393px;
+  height: 189px;
+}
+
+.house-codes__word--pearls {
+  top: 232px;
+  left: 544px;
+  width: 546px;
+  height: 189px;
+}
+
+.house-codes__word--london {
+  top: 232px;
+  left: 1260px;
+  width: 583px;
+  height: 189px;
+}
+
+.house-codes__word--activism {
+  top: 445px;
+  left: -73px;
+  width: 658px;
+  height: 189px;
+}
+
+.house-codes__word--heritage {
+  top: 445px;
+  left: 755px;
+  width: 682px;
+  height: 189px;
+}
+
+.house-codes__word--chain {
+  top: 445px;
+  left: 1607px;
+  width: 434px;
+  height: 189px;
+}
+
+.house-codes__word--archive {
+  top: 658px;
+  left: -167px;
+  width: 608px;
+  height: 189px;
+}
+
+.house-codes__word--platform {
+  top: 658px;
+  left: 611px;
+  width: 741px;
+  height: 189px;
+}
+
+.house-codes__word--draping {
+  top: 658px;
+  left: 1522px;
+  width: 623px;
+  height: 189px;
+}
+
+.house-codes__word--red-label {
+  top: 871px;
+  left: -234px;
+  width: 773px;
+  height: 189px;
+}
+
+.house-codes__word--safety-pin {
+  top: 871px;
+  left: 709px;
+  width: 822px;
+  height: 189px;
+}
+
+.house-codes__word--tailoring {
+  top: 871px;
+  left: 1701px;
+  width: 738px;
+  height: 189px;
+}
+
+.house-codes__caption {
+  position: absolute;
+  color: #000;
+  font: var(--type-text-caption);
+  letter-spacing: var(--tracking-text-caption);
+  line-height: 1.45;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.house-codes__caption--british-heritage {
+  top: 29px;
+  left: 1275px;
+  width: 108px;
+  height: 20px;
+}
+
+.house-codes__caption--house-symbol {
+  top: 29px;
+  left: 100px;
+  width: 99px;
+  height: 20px;
+}
+
+.house-codes__caption--radical-tailoring {
+  top: 29px;
+  left: 543px;
+  width: 112px;
+  height: 20px;
+}
+
+.house-codes__caption--handcrafted {
+  top: 242px;
+  left: 464px;
+  width: 86px;
+  height: 20px;
+}
+
+.house-codes__caption--punk-origin {
+  top: 468px;
+  left: 676px;
+  width: 79px;
+  height: 20px;
+}
+
+.house-codes__caption--since-1971 {
+  top: 242px;
+  left: 1180px;
+  width: 70px;
+  height: 20px;
+}

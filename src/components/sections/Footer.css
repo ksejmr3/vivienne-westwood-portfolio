@@ -1,0 +1,134 @@
+.site-footer {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  margin-left: 1px;
+  overflow: hidden;
+  background: var(--color-primary-black);
+  color: var(--color-primary-white);
+  white-space: nowrap;
+}
+
+.site-footer__wordmark {
+  position: absolute;
+  top: 30px;
+  left: 334px;
+  width: 1250px;
+  height: 612px;
+  color: #fff;
+  font: var(--type-display-brand);
+  letter-spacing: var(--tracking-display-brand);
+  line-height: 0.85;
+  text-align: center;
+}
+
+.site-footer__wordmark span {
+  display: block;
+  white-space: pre;
+}
+
+.site-footer__collection-cta {
+  position: absolute;
+  top: 692px;
+  left: 1634px;
+  width: 241px;
+  height: 19px;
+  color: var(--color-primary-white);
+  font: var(--type-button-primary);
+  letter-spacing: var(--tracking-button-primary);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.site-footer__meta {
+  position: absolute;
+  top: 784px;
+  left: 45px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 51px;
+  color: #fff;
+  font: var(--type-text-small);
+  letter-spacing: 0.06px;
+  line-height: 1.45;
+}
+
+.site-footer__meta span {
+  display: block;
+  height: 17.4px;
+}
+
+.site-footer__navigation {
+  position: absolute;
+  top: 692px;
+  left: 45px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: 568px;
+  height: 22px;
+  color: var(--color-primary-white);
+  font: var(--type-text-label);
+  letter-spacing: 0.16px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.site-footer__navigation-item {
+  display: block;
+  flex: 0 0 var(--item-width);
+}
+
+.site-footer__social {
+  position: absolute;
+  top: 1030px;
+  left: 45px;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  width: 356px;
+  height: 20px;
+  color: var(--color-primary-white);
+  font: var(--type-text-caption);
+  letter-spacing: 0.07px;
+  line-height: 1.45;
+}
+
+.site-footer__social-item {
+  display: block;
+  flex: 0 0 var(--item-width);
+}
+
+.site-footer__copyright {
+  position: absolute;
+  top: 1016px;
+  left: 1597px;
+  display: flex;
+  flex-direction: column;
+  width: 278px;
+  height: 34px;
+  color: var(--color-primary-white);
+  font: var(--type-text-small);
+  letter-spacing: 0.06px;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.site-footer__copyright span {
+  display: block;
+  height: 17px;
+}
+
+.site-footer__copyright-mark {
+  position: absolute;
+  top: 560px;
+  left: 1584px;
+  width: 69px;
+  height: 82px;
+  color: var(--color-primary-white);
+  font: var(--type-display-l);
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-align: right;
+}
