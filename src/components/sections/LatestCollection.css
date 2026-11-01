@@ -1,12 +1,5 @@
-.latest-collection {
-  position: relative;
-  width: 1920px;
-  height: 1080px;
-  margin-left: 1px;
-  overflow: hidden;
-  background: var(--color-primary-white);
-  color: #000;
-}
+.latest-collection { position: relative; width: 1920px; height: 2520px; margin-left: 1px; background: var(--color-primary-white); color: #000; }
+.latest-collection__sticky { position: sticky; top: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--color-primary-white); }
 
 .latest-collection__image-stack {
   position: absolute;
@@ -14,27 +7,11 @@
   pointer-events: none;
 }
 
-.latest-collection__image-frame {
-  position: absolute;
-  width: 600px;
-  height: 800px;
-  overflow: hidden;
-}
-
-.latest-collection__image-frame--01 {
-  top: 80px;
-  left: 225px;
-}
-
-.latest-collection__image-frame--02 {
-  top: 110px;
-  left: 251px;
-}
-
-.latest-collection__image-frame--03 {
-  top: 140px;
-  left: 278px;
-}
+.latest-collection__image-frame { position: absolute; width: 600px; height: 800px; overflow: hidden; opacity: 0; transform: translate(-60px, 42px) scale(.96); transition: transform 600ms cubic-bezier(.22, 1, .36, 1), opacity 420ms ease; }
+.latest-collection[data-entered='true'] .latest-collection__image-frame { opacity: 1; }
+.latest-collection__image-frame[data-slot='0'] { top: 140px; left: 278px; z-index: 3; transform: translate(0) scale(1); }
+.latest-collection__image-frame[data-slot='1'] { top: 110px; left: 251px; z-index: 2; transform: translate(0) scale(1); }
+.latest-collection__image-frame[data-slot='2'] { top: 80px; left: 225px; z-index: 1; transform: translate(0) scale(1); }
 
 .latest-collection__image {
   position: absolute;
@@ -43,53 +20,24 @@
   max-width: none;
 }
 
-.latest-collection__image--01 {
-  top: -0.01%;
-  left: 0;
-}
-
-.latest-collection__image--02 {
-  top: -0.02%;
-  left: 0.07%;
-}
-
-.latest-collection__image--03 {
-  top: -2.12%;
-  left: 0;
-}
+.latest-collection__image-frame[data-slot='0'] .latest-collection__image { top: -2.12%; }
 
 .latest-collection__states {
   position: absolute;
   top: 130px;
   left: 894px;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 20px; margin: 0; padding: 0;
 }
 
-.latest-collection__state {
-  display: block;
-  width: 18px;
-  height: 18px;
-}
+.latest-collection__state { width: 18px; height: 18px; border-radius: 50%; background: rgba(17,17,17,.32); transition: background-color 280ms ease, transform 280ms ease; }
+.latest-collection__state--active { width: 15px; height: 15px; margin-inline: 1.5px; background: var(--color-primary-black); transform: scale(1.08); }
 
-.latest-collection__state img {
-  width: 18px;
-  height: 18px;
-  max-width: none;
-}
-
-.latest-collection__state--active,
-.latest-collection__state--active img {
-  width: 15px;
-  height: 15px;
-}
-
+.latest-collection__copy { position: absolute; top: 320px; left: 1077px; z-index: 4; width: 570px; }
 .latest-collection__eyebrow {
-  position: absolute;
-  top: 320px;
-  left: 1077px;
   margin: 0;
   color: #000;
   font: var(--type-text-label);
@@ -98,10 +46,9 @@
   white-space: nowrap;
 }
 
+.latest-collection__copy-panel { position: absolute; top: 32px; left: 0; width: 100%; opacity: 0; pointer-events: none; transform: translateY(28px); transition: opacity 260ms ease, transform 440ms cubic-bezier(.22, 1, .36, 1); }
+.latest-collection__copy-panel[data-active='true'] { opacity: 1; transform: translateY(0); }
 .latest-collection__title {
-  position: absolute;
-  top: 352px;
-  left: 1077px;
   margin: 0;
   color: #000;
   font: var(--type-display-xl);
@@ -110,16 +57,18 @@
   white-space: nowrap;
 }
 
+.latest-collection__title span, .latest-collection__description span { display: block; }
 .latest-collection__description {
-  position: absolute;
-  top: 638px;
-  left: 1077px;
   width: 517px;
-  margin: 0;
+  margin: 172px 0 0;
   color: #000;
   font: var(--type-text-lead);
   letter-spacing: var(--tracking-text-lead);
   line-height: 1.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .latest-collection__image-frame, .latest-collection__state, .latest-collection__copy-panel { transition: none; }
 }
 
 .visually-hidden {
