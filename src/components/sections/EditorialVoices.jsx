@@ -21,7 +21,7 @@ const quoteLines = [
 
 export default function EditorialVoices() {
   return (
-    <section className="editorial-voices" aria-label="Editorial Voices">
+    <section className="editorial-voices" id="editorial" aria-label="Editorial Voices">
       <div className="editorial-voices__panel">
         <nav className="editorial-voices__publications" aria-label="Publications">
           {publications.map(({ id, name, active, width }) => (

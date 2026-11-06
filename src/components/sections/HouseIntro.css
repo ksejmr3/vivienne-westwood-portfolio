@@ -17,3 +17,23 @@
   line-height: 0.94;
   white-space: nowrap;
 }
+
+@media (max-width: 900px) {
+  .house-intro {
+    display: grid;
+    width: 100%;
+    height: auto;
+    min-height: clamp(420px, 72vh, 720px);
+    place-items: center;
+    padding: 72px clamp(20px, 6vw, 56px);
+  }
+
+  .house-intro__title {
+    position: static;
+    max-width: 12ch;
+    font-size: clamp(46px, 11vw, 92px);
+    line-height: 0.94;
+    text-align: center;
+    white-space: normal;
+  }
+}

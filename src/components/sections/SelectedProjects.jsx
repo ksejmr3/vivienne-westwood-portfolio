@@ -2,90 +2,26 @@ import { useEffect, useState } from 'react'
 import './SelectedProjects.css'
 
 const projects = [
-  {
-    id: 'project-tartan-orbit',
-    image: '/images/project-01.png',
-    alt: 'Orb necklace on tartan and antique fabric',
-    angle: -16,
-    frame: { left: 158, top: 300, width: 514.158, height: 654.711 },
-    activeOffset: { x: 658.741, y: -67.655 },
-    category: 'HOUSE CODES / ICONS',
-    copy: 'Orb, corset, tartan and pearls define the visual language of the house.',
-  },
-  {
-    id: 'project-kings-road',
-    image: '/images/project-02.png',
-    alt: 'Historic fashion shop on a London street',
-    angle: -10,
-    frame: { left: 398.852, top: 250, width: 464.227, height: 630.514 },
-    activeOffset: { x: 442.854, y: -5.557 },
-    category: 'ARCHIVE / SINCE 1971',
-    copy: 'From the SEX boutique to decades of radical fashion history.',
-  },
-  {
-    id: 'project-atelier',
-    image: '/images/project-03.png',
-    alt: 'Designer working on a garment in the atelier',
-    angle: -4,
-    frame: { left: 652.75, top: 220, width: 409.209, height: 599.409 },
-    activeOffset: { x: 216.466, y: 39.996 },
-    imageClass: 'selected-projects__image--atelier',
-    category: 'DETAIL / CONSTRUCTION',
-    copy: 'Corsetry, tailoring and hand-finished details at close range.',
-  },
-  {
-    id: 'project-rebellion-campaign',
-    image: '/images/project-04.png',
-    alt: 'Model in a dark collection against a graphic wall',
-    angle: 4,
-    frame: { left: 869.22, top: 220, width: 409.209, height: 599.409 },
-    activeOffset: { x: -0.005, y: 39.996 },
-    category: 'CAMPAIGN / BRAND STORY',
-    copy: 'A visual narrative built around rebellion, identity and culture.',
-  },
-  {
-    id: 'project-couture-editorial',
-    image: '/images/project-05.png',
-    alt: 'Model wearing a sculptural ivory and rose garment',
-    angle: 10,
-    frame: { left: 1050.75, top: 250, width: 464.227, height: 630.514 },
-    activeOffset: { x: -209.044, y: -5.557 },
-    imageClass: 'selected-projects__image--couture',
-    category: 'EDITORIAL / SEASON LOOK',
-    copy: 'Styling the house codes through a sharper editorial lens.',
-  },
-  {
-    id: 'project-runway',
-    image: '/images/project-06.png',
-    alt: 'Model walking the runway in a dramatic ivory gown',
-    angle: 16,
-    frame: { left: 1247.07, top: 300, width: 514.158, height: 654.711 },
-    activeOffset: { x: -430.329, y: -67.655 },
-    imageClass: 'selected-projects__image--runway',
-    category: 'RUNWAY / SEASON 2026',
-    copy: 'A study of movement, silhouette and theatrical attitude.',
-  },
+  { id: 'project-tartan-orbit', image: '/images/project-01.png', alt: 'Orb necklace on tartan and antique fabric', angle: -16, x: 230.079, y: 339.855, popOut: { x: -70, y: 20, scale: 1.08 }, category: 'HOUSE CODES / ICONS', copy: 'Orb, corset, tartan and pearls define the visual language of the house.' },
+  { id: 'project-kings-road', image: '/images/project-02.png', alt: 'Historic fashion shop on a London street', angle: -10, x: 445.963, y: 277.757, popOut: { x: -50, y: 32, scale: 1.07 }, category: 'ARCHIVE / SINCE 1971', copy: 'From the SEX boutique to decades of radical fashion history.' },
+  { id: 'project-atelier', image: '/images/project-03.png', alt: 'Designer working on a garment in the atelier', angle: -4, x: 672.354, y: 232.204, popOut: { x: -24, y: 40, scale: 1.06 }, imageClass: 'selected-projects__image--atelier', category: 'DETAIL / CONSTRUCTION', copy: 'Corsetry, tailoring and hand-finished details at close range.' },
+  { id: 'project-rebellion-campaign', image: '/images/project-04.png', alt: 'Model in a dark collection against a graphic wall', angle: 4, x: 888.824, y: 232.204, popOut: { x: 0, y: 40, scale: 1.06 }, category: 'CAMPAIGN / BRAND STORY', copy: 'A visual narrative built around rebellion, identity and culture.' },
+  { id: 'project-couture-editorial', image: '/images/project-05.png', alt: 'Model wearing a sculptural ivory and rose garment', angle: 10, x: 1097.863, y: 277.757, popOut: { x: 50, y: 32, scale: 1.07 }, imageClass: 'selected-projects__image--couture', category: 'EDITORIAL / SEASON LOOK', copy: 'Styling the house codes through a sharper editorial lens.' },
+  { id: 'project-runway', image: '/images/project-06.png', alt: 'Model walking the runway in a dramatic ivory gown', angle: 16, x: 1319.149, y: 339.855, popOut: { x: 70, y: 20, scale: 1.08 }, imageClass: 'selected-projects__image--runway', category: 'RUNWAY / SEASON 2026', copy: 'A study of movement, silhouette and theatrical attitude.' },
 ]
 
-function ProjectCard({ project, index, active, onActivate }) {
-  const { id, image, alt, angle, frame, activeOffset, imageClass = '', category } = project
+function ProjectCard({ project, index, active, responsive, onActivate, onDeactivate }) {
+  const activate = (event) => {
+    onActivate()
+    if (responsive && event.type === 'click') {
+      event.currentTarget.parentElement?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest', inline: 'center' })
+    }
+  }
 
   return (
-    <div
-      className={`selected-projects__card-frame${active ? ' selected-projects__card-frame--active' : ''}`}
-      style={{
-        '--card-left': `${frame.left}px`,
-        '--card-top': `${frame.top}px`,
-        '--card-frame-width': `${frame.width}px`,
-        '--card-frame-height': `${frame.height}px`,
-        '--card-angle': `${angle}deg`,
-        '--card-layer': index + 1,
-        '--active-x': `${activeOffset.x}px`,
-        '--active-y': `${activeOffset.y}px`,
-      }}
-    >
-      <button className="selected-projects__card" type="button" data-project-id={id} onFocus={onActivate} onPointerEnter={onActivate} aria-label={category}>
-        <img className={`selected-projects__image ${imageClass}`} src={image} alt={alt} />
+    <div className={`selected-projects__card-frame${active ? ' is-active' : ''}`} onFocusCapture={onActivate} style={{ '--card-left': `${project.x}px`, '--card-top': `${project.y}px`, '--card-rotation': `${project.angle}deg`, '--mobile-rotation': `${project.angle * .32}deg`, '--card-layer': index + 1, '--popout-x': `${project.popOut.x}px`, '--popout-y': `${project.popOut.y}px`, '--popout-scale': project.popOut.scale }}>
+      <button className="selected-projects__card" type="button" aria-label={`${index + 1} of ${projects.length}: ${project.category}`} aria-pressed={active} onClick={activate} onPointerEnter={(event) => { if (event.pointerType === 'mouse') onActivate() }} onPointerLeave={(event) => { if (event.pointerType === 'mouse' && document.activeElement !== event.currentTarget) onDeactivate() }}>
+        <img className={`selected-projects__image ${project.imageClass ?? ''}`} src={project.image} alt={project.alt} />
         <span className="selected-projects__overlay" aria-hidden="true" />
       </button>
     </div>
@@ -93,49 +29,31 @@ function ProjectCard({ project, index, active, onActivate }) {
 }
 
 export default function SelectedProjects() {
-  const [activeId, setActiveId] = useState(null)
-  const [displayedId, setDisplayedId] = useState(null)
-  const [infoVisible, setInfoVisible] = useState(false)
-  const displayedProject = projects.find((project) => project.id === displayedId)
-
-  const activateProject = (id) => {
-    setInfoVisible(false)
-    setActiveId(id)
-  }
-
-  const clearActiveProject = () => {
-    setInfoVisible(false)
-    setDisplayedId(null)
-    setActiveId(null)
-  }
+  const [responsive, setResponsive] = useState(() => window.innerWidth <= 900)
+  const [activeIndex, setActiveIndex] = useState(() => window.innerWidth <= 900 ? 0 : null)
+  const activeProject = activeIndex === null ? null : projects[activeIndex]
 
   useEffect(() => {
-    if (!activeId) return undefined
-    const timeout = window.setTimeout(() => {
-      setDisplayedId(activeId)
-      setInfoVisible(true)
-    }, 160)
-    return () => window.clearTimeout(timeout)
-  }, [activeId])
+    const onResize = () => {
+      const nextResponsive = window.innerWidth <= 900
+      setResponsive(nextResponsive)
+      setActiveIndex((current) => nextResponsive ? current ?? 0 : null)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
 
   return (
-    <section className="selected-projects" aria-labelledby="selected-projects-title">
-      <h2 className="selected-projects__title" id="selected-projects-title">
-        SELECTED PROJECTS
-      </h2>
-
-      <div className="selected-projects__project-stack" aria-label="Selected projects" onPointerLeave={clearActiveProject} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) clearActiveProject() }}>
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} active={project.id === activeId} onActivate={() => activateProject(project.id)} />
-        ))}
-        <div className={`selected-projects__project-info${displayedProject && infoVisible ? ' selected-projects__project-info--visible' : ''}`} aria-live="polite">
-          {displayedProject && <><p>{displayedProject.category}</p><p>{displayedProject.copy}</p></>}
-        </div>
+    <section className="selected-projects" id="projects" aria-labelledby="selected-projects-title">
+      <h2 className="selected-projects__title" id="selected-projects-title">SELECTED PROJECTS</h2>
+      <div className="selected-projects__project-stack" aria-label="Selected projects" onPointerLeave={(event) => { if (!responsive && !event.currentTarget.contains(document.activeElement)) setActiveIndex(null) }} onBlur={(event) => { if (!responsive && !event.currentTarget.contains(event.relatedTarget)) setActiveIndex(null) }}>
+        {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} active={activeIndex === index} responsive={responsive} onActivate={() => setActiveIndex(index)} onDeactivate={() => setActiveIndex(responsive ? index : null)} />)}
       </div>
-
-      <div className="selected-projects__all-projects">
-        <span>VIEW ALL PROJECTS</span>
-        <img src="/icons/projects-arrow.svg" alt="" />
+      <div className={`selected-projects__project-info${activeProject ? ' is-visible' : ''}`} role="status" aria-live="polite" aria-hidden={!activeProject}>
+        {activeProject && <>
+          <p className="selected-projects__category">{activeProject.category}</p>
+          <p className="selected-projects__copy">{activeProject.copy}</p>
+        </>}
       </div>
     </section>
   )

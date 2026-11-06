@@ -100,3 +100,26 @@
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 900px) {
+  .expertise-craftsmanship {
+    display: grid;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-left: 0;
+    grid-template-areas: 'counter' 'image' 'description' 'title' 'divider' 'cta';
+    padding: clamp(56px, 8vw, 84px) clamp(20px, 6vw, 56px) clamp(72px, 10vw, 104px);
+  }
+
+  .expertise-craftsmanship__counter { position: static; grid-area: counter; width: 48px; height: 48px; margin-bottom: 36px; }
+  .expertise-craftsmanship__image-bounds { position: static; grid-area: image; width: min(100%, 520px); height: auto; margin: 0 auto 44px; transform: none; }
+  .expertise-craftsmanship__image-rotation { width: 100%; }
+  .expertise-craftsmanship__image { width: 100%; height: auto; aspect-ratio: 580 / 770; object-fit: cover; }
+  .expertise-craftsmanship__description { position: static; grid-area: description; display: block; width: auto; height: auto; margin: 0 0 44px; font-size: clamp(18px, 3vw, 25px); line-height: 1.45; white-space: normal; }
+  .expertise-craftsmanship__description span { display: inline; }
+  .expertise-craftsmanship__description span:not(:last-child)::after { content: ' '; }
+  .expertise-craftsmanship__title { position: static; grid-area: title; width: auto; height: auto; margin: 0 0 40px; font-size: clamp(49px, 13vw, 108px); line-height: 0.84; overflow-wrap: anywhere; }
+  .expertise-craftsmanship__divider { position: static; grid-area: divider; width: 100%; }
+  .expertise-craftsmanship__cta-label { position: static; grid-area: cta; width: auto; height: auto; margin: 20px 0 0; font-size: 14px; }
+}

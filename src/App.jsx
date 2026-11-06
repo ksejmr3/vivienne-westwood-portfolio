@@ -17,17 +17,31 @@ function App() {
     <main className="portfolio">
       <Header />
       <Hero />
-      <LatestCollection />
-      <HouseObjects />
-      <SelectedProjects />
-      <HouseIntro />
-      <ExpertiseHeritage />
-      <ExpertiseCraftsmanship />
-      <ExpertiseRebellion />
-      <LatestNews />
-      <HouseCodes />
-      <EditorialVoices />
-      <Footer />
+      <div className="portfolio__responsive-collection">
+        <LatestCollection />
+      </div>
+      <div className="portfolio__responsive-section">
+        <HouseObjects />
+      </div>
+      <div className="portfolio__responsive-section">
+        <SelectedProjects />
+      </div>
+      <div className="portfolio__responsive-section">
+        <HouseIntro />
+        <ExpertiseHeritage />
+        <ExpertiseCraftsmanship />
+        <ExpertiseRebellion />
+      </div>
+      <div className="portfolio__legacy-sections">
+        <LatestNews />
+      </div>
+      <div className="portfolio__responsive-section">
+        <HouseCodes />
+      </div>
+      <div className="portfolio__legacy-sections">
+        <EditorialVoices />
+        <Footer />
+      </div>
     </main>
   )
 }

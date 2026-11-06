@@ -182,3 +182,143 @@
   width: 70px;
   height: 20px;
 }
+
+/* Continuous row tracks retain the Figma coordinates inside each 1920px copy. */
+.house-codes__row,
+.house-codes__track,
+.house-codes__copy {
+  position: absolute;
+  inset: 0;
+}
+
+.house-codes__row {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.house-codes__track {
+  /* The last Figma word extends past x=1920, so the loop must cover the
+     complete 3000px pattern instead of cutting through that word. */
+  width: 6000px;
+  height: 1080px;
+  will-change: transform;
+  animation-duration: var(--marquee-duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.house-codes__row--left .house-codes__track { animation-name: house-codes-scroll-left; }
+.house-codes__row--right .house-codes__track { animation-name: house-codes-scroll-right; }
+
+.house-codes__copy {
+  width: 3000px;
+  height: 1080px;
+}
+
+.house-codes__row--left .house-codes__copy--duplicate { left: 3000px; }
+.house-codes__row--right .house-codes__copy--duplicate { left: -3000px; }
+
+.house-codes__word,
+.house-codes__caption {
+  position: absolute;
+  top: var(--item-top);
+  left: var(--item-left);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.house-codes__word {
+  color: var(--word-color, #000);
+  cursor: default;
+  font: 500 210px/.9 var(--font-display);
+  letter-spacing: -.5px;
+  line-height: .9;
+  pointer-events: none;
+}
+
+.house-codes__caption {
+  color: #000;
+  font: 400 14px/1.45 var(--font-body);
+  letter-spacing: .5px;
+  pointer-events: none;
+}
+
+@keyframes house-codes-scroll-left {
+  to { transform: translate3d(-3000px, 0, 0); }
+}
+
+@keyframes house-codes-scroll-right {
+  to { transform: translate3d(3000px, 0, 0); }
+}
+
+@media (max-width: 900px) {
+  .house-codes {
+    display: grid;
+    grid-template-rows: 72px repeat(5, minmax(0, 1fr));
+    width: 100%;
+    height: calc(clamp(630px, 90svh, 850px) + 72px);
+    margin-left: 0;
+    scroll-margin-top: 72px;
+  }
+
+  .house-codes__row {
+    position: relative;
+    inset: auto;
+    grid-column: 1;
+    width: 100%;
+    height: auto;
+  }
+
+  .house-codes__row:nth-child(1) { grid-row: 2; }
+  .house-codes__row:nth-child(2) { grid-row: 3; }
+  .house-codes__row:nth-child(3) { grid-row: 4; }
+  .house-codes__row:nth-child(4) { grid-row: 5; }
+  .house-codes__row:nth-child(5) { grid-row: 6; }
+
+  .house-codes__track {
+    width: 3000px;
+    height: 100%;
+  }
+
+  .house-codes__copy {
+    width: 1500px;
+    height: 100%;
+  }
+
+  .house-codes__row--left .house-codes__copy--duplicate { left: 1500px; }
+  .house-codes__row--right .house-codes__copy--duplicate { left: -1500px; }
+
+  .house-codes__word,
+  .house-codes__caption {
+    left: calc(var(--item-left) * .5);
+  }
+
+  .house-codes__word {
+    top: 42px;
+    font-size: clamp(72px, 12vw, 110px);
+    line-height: .88;
+  }
+
+  .house-codes__caption {
+    top: 16px;
+    font-size: clamp(11px, 1.8vw, 14px);
+  }
+
+  .house-codes__row--left .house-codes__track { animation-name: house-codes-mobile-left; }
+  .house-codes__row--right .house-codes__track { animation-name: house-codes-mobile-right; }
+}
+
+@keyframes house-codes-mobile-left {
+  to { transform: translate3d(-1500px, 0, 0); }
+}
+
+@keyframes house-codes-mobile-right {
+  to { transform: translate3d(1500px, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .house-codes__row .house-codes__track { animation: none; }
+}

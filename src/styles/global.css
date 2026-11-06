@@ -118,3 +118,33 @@ a {
   min-height: 1171px;
   zoom: min(1, calc(100cqw / 1921px));
 }
+
+.portfolio__responsive-collection,
+.portfolio__responsive-section,
+.portfolio__legacy-sections {
+  width: 1921px;
+}
+
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  .portfolio {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 72px;
+    zoom: 1;
+  }
+
+  .portfolio__responsive-collection,
+  .portfolio__responsive-section {
+    width: 100%;
+  }
+
+  .portfolio__legacy-sections {
+    width: 1921px;
+    zoom: calc(100vw / 1921px);
+  }
+}
