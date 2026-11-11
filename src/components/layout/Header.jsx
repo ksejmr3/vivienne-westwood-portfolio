@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from 'react'
 import './Header.css'
 
 const navigation = [
-  { label: 'Collection', href: '#collection' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'House Codes', href: '#house-codes' },
-  { label: 'Editorial', href: '#editorial' },
+  { label: 'Collection', href: '#/home/collection' },
+  { label: 'Projects', href: '#/home/projects' },
+  { label: 'House Codes', href: '#/home/house-codes' },
+  { label: 'Editorial', href: '#/home/editorial' },
 ]
 
-function HeaderIcon({ src, alt, className = '' }) {
-  return <img className={`site-header__icon ${className}`} src={src} alt={alt} />
+function HeaderIcon({ src, className = '' }) {
+  return <img className={`site-header__icon ${className}`} src={src} alt="" />
 }
 
 export default function Header() {
@@ -44,9 +44,9 @@ export default function Header() {
 
   return (
     <header className="site-header" aria-label="Site header" data-menu-open={isMenuOpen}>
-      <div className="site-header__logo-frame">
+      <a className="site-header__logo-frame" href="#/home" aria-label="Vivienne Westwood concept site home">
         <img className="site-header__logo" src="/icons/logo.svg" alt="Vivienne Westwood" />
-      </div>
+      </a>
 
       <nav className="site-header__nav" aria-label="Main navigation">
         {navigation.map(({ label, href }) => (
@@ -57,9 +57,9 @@ export default function Header() {
       </nav>
 
       <div className="site-header__actions" aria-label="Account and shopping" role="group">
-        <HeaderIcon src="/icons/person.svg" alt="Account" />
-        <HeaderIcon src="/icons/heart.svg" alt="Wishlist" />
-        <HeaderIcon src="/icons/bag.svg" alt="Shopping bag" className="site-header__bag" />
+        <a href="#/demo/account" aria-label="Account demo"><HeaderIcon src="/icons/person.svg" /></a>
+        <a href="#/demo/wishlist" aria-label="Wishlist demo"><HeaderIcon src="/icons/heart.svg" /></a>
+        <a href="#/demo/bag" aria-label="Shopping bag demo"><HeaderIcon src="/icons/bag.svg" className="site-header__bag" /></a>
       </div>
 
       <button

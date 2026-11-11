@@ -27,31 +27,33 @@ const newsItems = [
 function NewsItem({ category, titleLines, image, imageAlt, id }) {
   return (
     <article className={`latest-news__item latest-news__item--${id}`}>
-      <img className="latest-news__image" src={image} alt={imageAlt} />
-      <p className="latest-news__category">{category}</p>
-      <h3 className="latest-news__item-title">
-        {titleLines.map((line) => (
-          <span key={line}>{line}</span>
-        ))}
-      </h3>
+      <a className="latest-news__item-link" href={`#/news/${id}`}>
+        <img className="latest-news__image" src={image} alt={imageAlt} />
+        <p className="latest-news__category">{category}</p>
+        <h3 className="latest-news__item-title">
+          {titleLines.map((line) => (
+            <span key={line}>{line}</span>
+          ))}
+        </h3>
+      </a>
     </article>
   )
 }
 
 function ViewAllNews() {
   return (
-    <div className="latest-news__view-all" aria-label="View all news">
+    <a className="latest-news__view-all" href="#/news" aria-label="View all concept news">
       <span className="latest-news__view-all-label">VIEW ALL NEWS</span>
       <span className="latest-news__arrow" aria-hidden="true">
         <img src="/icons/news-arrow.svg" alt="" />
       </span>
-    </div>
+    </a>
   )
 }
 
 export default function LatestNews() {
   return (
-    <section className="latest-news" aria-labelledby="latest-news-title">
+    <section className="latest-news" id="news" aria-labelledby="latest-news-title">
       <h2 className="latest-news__title" id="latest-news-title">
         LATEST NEWS
       </h2>

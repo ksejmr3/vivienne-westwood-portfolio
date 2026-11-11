@@ -40,7 +40,7 @@ export default function ExpertiseRebellion() {
       </h2>
 
       <div className="expertise-rebellion__divider" aria-hidden="true" />
-      <p className="expertise-rebellion__cta-label">Explore Rebellion →</p>
+      <a className="expertise-rebellion__cta-label" href="#/expertise/rebellion">Explore Rebellion →</a>
     </section>
   )
 }

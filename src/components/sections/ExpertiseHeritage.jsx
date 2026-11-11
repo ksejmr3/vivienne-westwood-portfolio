@@ -36,7 +36,7 @@ export default function ExpertiseHeritage() {
         HERITAGE
       </h2>
 
-      <p className="expertise-heritage__link-label">Explore Heritage →</p>
+      <a className="expertise-heritage__link-label" href="#/expertise/heritage">Explore Heritage →</a>
       <div className="expertise-heritage__divider" aria-hidden="true" />
     </section>
   )

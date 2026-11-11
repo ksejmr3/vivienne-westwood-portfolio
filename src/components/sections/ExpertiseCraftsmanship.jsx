@@ -42,9 +42,9 @@ export default function ExpertiseCraftsmanship() {
         <span>MANSHIP</span>
       </h2>
 
-      <p className="expertise-craftsmanship__cta-label">
+      <a className="expertise-craftsmanship__cta-label" href="#/expertise/craftsmanship">
         Explore Craftsmanship →
-      </p>
+      </a>
       <div className="expertise-craftsmanship__divider" aria-hidden="true" />
     </section>
   )

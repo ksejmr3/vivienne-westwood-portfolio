@@ -14,6 +14,8 @@
   width: 90px;
   height: 90px;
   overflow: hidden;
+  color: inherit;
+  text-decoration: none;
 }
 
 .site-header__logo {
@@ -50,6 +52,13 @@
   gap: 20px;
   width: 110px;
   height: 24px;
+}
+
+.site-header__actions a {
+  display: block;
+  flex: 0 0 24px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .site-header__icon {

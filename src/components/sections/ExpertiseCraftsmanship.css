@@ -1,5 +1,7 @@
 .expertise-craftsmanship {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 30;
   width: 1920px;
   height: 1080px;
   margin-left: 1px;
@@ -90,6 +92,7 @@
   letter-spacing: var(--tracking-button-primary);
   line-height: 1.2;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .expertise-craftsmanship__divider {
@@ -103,6 +106,8 @@
 
 @media (max-width: 900px) {
   .expertise-craftsmanship {
+    position: relative;
+    top: auto;
     display: grid;
     width: 100%;
     height: auto;

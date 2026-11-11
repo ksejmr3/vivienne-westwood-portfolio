@@ -1,5 +1,6 @@
 .house-codes {
   position: relative;
+  z-index: 60;
   width: 1920px;
   height: 1080px;
   margin-left: 1px;
@@ -193,8 +194,23 @@
 
 .house-codes__row {
   overflow: hidden;
-  pointer-events: none;
+  right: 0;
+  left: 0;
+  height: 213px;
+  pointer-events: auto;
 }
+
+.house-codes__row:nth-child(1) { top: 0; }
+.house-codes__row:nth-child(2) { top: 213px; }
+.house-codes__row:nth-child(3) { top: 426px; }
+.house-codes__row:nth-child(4) { top: 639px; }
+.house-codes__row:nth-child(5) { top: 852px; height: 228px; }
+
+.house-codes__row:nth-child(1) .house-codes__track { top: 0; }
+.house-codes__row:nth-child(2) .house-codes__track { top: -213px; }
+.house-codes__row:nth-child(3) .house-codes__track { top: -426px; }
+.house-codes__row:nth-child(4) .house-codes__track { top: -639px; }
+.house-codes__row:nth-child(5) .house-codes__track { top: -852px; }
 
 .house-codes__track {
   /* The last Figma word extends past x=1920, so the loop must cover the
@@ -236,7 +252,12 @@
   font: 500 210px/.9 var(--font-display);
   letter-spacing: -.5px;
   line-height: .9;
-  pointer-events: none;
+  pointer-events: auto;
+  transition: color 120ms linear;
+}
+
+.house-codes__word:hover {
+  color: var(--hover-color, var(--color-accent-vivienne-red));
 }
 
 .house-codes__caption {
@@ -279,6 +300,7 @@
   .house-codes__row:nth-child(5) { grid-row: 6; }
 
   .house-codes__track {
+    top: 0 !important;
     width: 3000px;
     height: 100%;
   }
@@ -317,6 +339,110 @@
 
 @keyframes house-codes-mobile-right {
   to { transform: translate3d(1500px, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .house-codes__row .house-codes__track { animation: none; }
+}
+
+/* Measured groups replace the former fixed 3000px loop distance. */
+.house-codes__row {
+  --marquee-distance: 2200px;
+  --marquee-duration: 31.43s;
+  --marquee-gap: 170px;
+}
+
+.house-codes__row .house-codes__track {
+  position: relative;
+  inset: auto;
+  top: auto !important;
+  display: flex;
+  width: max-content;
+  height: 100%;
+}
+
+.house-codes__set {
+  display: flex;
+  flex: none;
+  gap: var(--marquee-gap);
+  height: 100%;
+  padding-right: var(--marquee-gap);
+  white-space: nowrap;
+}
+
+.house-codes__item {
+  position: relative;
+  display: flex;
+  flex: none;
+  min-width: max-content;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 5px;
+  white-space: nowrap;
+}
+
+.house-codes__item .house-codes__caption,
+.house-codes__item .house-codes__word {
+  position: relative;
+  top: auto;
+  left: auto;
+  display: block;
+  flex: none;
+  white-space: nowrap;
+}
+
+.house-codes__item .house-codes__caption {
+  font: 400 14px/1.45 var(--font-body);
+  letter-spacing: .5px;
+}
+
+.house-codes__item .house-codes__word {
+  margin-top: -2px;
+  color: #000;
+  font: 500 210px/.9 var(--font-display);
+  letter-spacing: -.5px;
+}
+
+.house-codes__item .house-codes__word:hover {
+  color: var(--hover-color, var(--color-accent-vivienne-red));
+}
+
+@keyframes house-codes-scroll-left {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(calc(var(--marquee-distance) * -1), 0, 0); }
+}
+
+@keyframes house-codes-scroll-right {
+  from { transform: translate3d(calc(var(--marquee-distance) * -1), 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 900px) {
+  .house-codes__row {
+    --marquee-gap: clamp(64px, 12vw, 96px);
+  }
+
+  .house-codes__row .house-codes__track {
+    width: max-content;
+  }
+
+  .house-codes__item {
+    padding-top: 8px;
+  }
+
+  .house-codes__item .house-codes__caption {
+    font-size: clamp(11px, 1.8vw, 14px);
+  }
+
+  .house-codes__item .house-codes__word {
+    margin-top: 4px;
+    font-size: clamp(72px, 12vw, 110px);
+    line-height: .88;
+  }
+
+  .house-codes__row--left .house-codes__track { animation-name: house-codes-scroll-left; }
+  .house-codes__row--right .house-codes__track { animation-name: house-codes-scroll-right; }
 }
 
 @media (prefers-reduced-motion: reduce) {

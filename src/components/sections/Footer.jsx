@@ -1,11 +1,11 @@
 import './Footer.css'
 
 const navigationItems = [
-  { id: 'home', label: 'HOME', width: 49 },
-  { id: 'collection', label: 'COLLECTION', width: 103 },
-  { id: 'projects', label: 'PROJECTS', width: 84 },
-  { id: 'house-codes', label: 'HOUSE CODES', width: 118 },
-  { id: 'editorial', label: 'EDITORIAL', width: 86 },
+  { id: 'home', label: 'HOME', width: 49, href: '#/home' },
+  { id: 'collection', label: 'COLLECTION', width: 103, href: '#/home/collection' },
+  { id: 'projects', label: 'PROJECTS', width: 84, href: '#/home/projects' },
+  { id: 'house-codes', label: 'HOUSE CODES', width: 118, href: '#/home/house-codes' },
+  { id: 'editorial', label: 'EDITORIAL', width: 86, href: '#/home/editorial' },
 ]
 
 const socialItems = [
@@ -23,7 +23,7 @@ export default function Footer() {
         <span>WESTWOOD</span>
       </h2>
 
-      <p className="site-footer__collection-cta"> EXPLORE THE COLLECTION →</p>
+      <a className="site-footer__collection-cta" href="#/collection">EXPLORE THE COLLECTION →</a>
 
       <div className="site-footer__meta" aria-label="House details">
         <span>LONDON </span>
@@ -32,18 +32,18 @@ export default function Footer() {
       </div>
 
       <nav className="site-footer__navigation" aria-label="Footer navigation">
-        {navigationItems.map(({ id, label, width }) => (
-          <span className="site-footer__navigation-item" key={id} style={{ '--item-width': `${width}px` }}>
+        {navigationItems.map(({ id, label, width, href }) => (
+          <a className="site-footer__navigation-item" href={href} key={id} style={{ '--item-width': `${width}px` }}>
             {label}
-          </span>
+          </a>
         ))}
       </nav>
 
       <div className="site-footer__social" aria-label="Social media">
         {socialItems.map(({ id, label, width }) => (
-          <span className="site-footer__social-item" key={id} style={{ '--item-width': `${width}px` }}>
+          <a className="site-footer__social-item" href={`#/demo/${id}`} key={id} style={{ '--item-width': `${width}px` }}>
             {label}
-          </span>
+          </a>
         ))}
       </div>
 

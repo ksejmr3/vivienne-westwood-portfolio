@@ -1,5 +1,7 @@
 .expertise-heritage {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 20;
   width: 1920px;
   height: 1080px;
   overflow: hidden;
@@ -82,6 +84,7 @@
   letter-spacing: var(--tracking-button-primary);
   line-height: 1.2;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .expertise-heritage__divider {
@@ -95,6 +98,8 @@
 
 @media (max-width: 900px) {
   .expertise-heritage {
+    position: relative;
+    top: auto;
     display: grid;
     width: 100%;
     height: auto;
